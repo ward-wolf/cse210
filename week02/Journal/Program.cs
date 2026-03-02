@@ -9,7 +9,6 @@
 // Steve Ward CSE210 March 2, 2026
 
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -46,17 +45,17 @@ class Program
 
             if (choice == 1)
             {
-                string _prompt = promptGenerator.GetRandomPrompt();
-                Console.WriteLine(_prompt);
+                string prompt = promptGenerator.GetRandomPrompt();
+                Console.WriteLine(prompt);
                 DateTime theCurrentTime = DateTime.Now;
-                string _dateText = theCurrentTime.ToShortDateString();
+                string dateText = theCurrentTime.ToShortDateString();
                 Console.Write("> ");
-                string _entryText = Console.ReadLine();
+                string entryText = Console.ReadLine();
 
                 Entry newEntry = new Entry();
-                newEntry._date = _dateText;
-                newEntry._promptText = _prompt;
-                newEntry._entryText = _entryText;
+                newEntry._date = dateText;
+                newEntry._promptText = prompt;
+                newEntry._entryText = entryText;
 
                 theJournal.AddEntry(newEntry);
             }
@@ -91,27 +90,27 @@ class Program
             else if (choice == 5)
             {
                 Console.WriteLine("Please enter a new prompt: ");
-                string _newPrompt = Console.ReadLine();
-                promptGenerator.AddPrompt(_newPrompt);
+                string newPrompt = Console.ReadLine();
+                promptGenerator.AddPrompt(newPrompt);
                 Console.WriteLine("Prompt added successfully!");
                 Console.WriteLine("Would you like to use this new prompt for an entry now? (y/n)");
-                string _response = Console.ReadLine().ToLower();
-                if (_response == "y")
+                string response = Console.ReadLine().ToLower();
+                if (response == "y")
                 {
-                    Console.WriteLine(_newPrompt);
+                    Console.WriteLine(newPrompt);
                     DateTime theCurrentTime = DateTime.Now;
-                    string _dateText = theCurrentTime.ToShortDateString();
+                    string dateText = theCurrentTime.ToShortDateString();
                     Console.Write("> ");
-                    string _entryText = Console.ReadLine();
+                    string entryText = Console.ReadLine();
 
                     Entry newEntry = new Entry();
-                    newEntry._date = _dateText;
-                    newEntry._promptText = _newPrompt;
-                    newEntry._entryText = _entryText;
+                    newEntry._date = dateText;
+                    newEntry._promptText = newPrompt;
+                    newEntry._entryText = entryText;
 
                     theJournal.AddEntry(newEntry);
                 }
-                else if (_response == "n")
+                else if (response == "n")
                 {
                     Console.WriteLine("Prompt added for this session.");
                 }
