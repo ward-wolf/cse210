@@ -10,22 +10,22 @@ class Order
 
     // Create private member variables
 
-    private List<Product> _Products;
-    private Customer _Customer;
+    private List<Product> _products;
+    private Customer _customer;
 
     // Create constructor
 
     public Order(Customer customer)
     {
-        _Customer = customer;
-        _Products = new List<Product>();
+        _customer = customer;
+        _products = new List<Product>();
     }
 
     // Method to add product
 
     public void AddProduct(Product product)
     {
-        _Products.Add(product);
+        _products.Add(product);
     }   
 
     // Method to find total cost
@@ -33,11 +33,11 @@ class Order
     public double GetTotalCost()
     {
         double totalCost = 0;
-        foreach (Product product in _Products)
+        foreach (Product product in _products)
         {
             totalCost += product.GetTotalCost();
         }
-        if (_Customer.IsUSAddress())
+        if (_customer.IsUSAddress())
         {
             totalCost += 5;
         }   
@@ -55,7 +55,7 @@ class Order
     {
         string packingLabel = "";  
         packingLabel += "Products:\n";
-        foreach (Product product in _Products)
+        foreach (Product product in _products)
         {
             packingLabel += product.GetName();
             packingLabel += " - ";
@@ -70,9 +70,9 @@ class Order
     public string CreateShippingLabel()
     {
         string shippingLabel = "";
-        shippingLabel += _Customer.GetName();
+        shippingLabel += _customer.GetName();
         shippingLabel += "\n";
-        shippingLabel += _Customer.GetAddress().GetAddress();
+        shippingLabel += _customer.GetAddress().GetAddress();
         shippingLabel += "\n";
 
         return shippingLabel;

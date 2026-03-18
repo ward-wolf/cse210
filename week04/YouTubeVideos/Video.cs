@@ -7,58 +7,58 @@ using System.Collections.Generic;
 
 class Video
 { 
-    private string _Title;
-    private string _Author;
-    private int _Length;
+    private string _title;
+    private string _author;
+    private int _length;
 
-    private List<Comment> _Comments; 
+    private List<Comment> _comments; 
 
     public Video(string title, string author, int length)
     {
-        _Title = title;
-        _Author = author;
-        _Length = length;
-        _Comments = new List<Comment>();
+        _title = title;
+        _author = author;
+        _length = length;
+        _comments = new List<Comment>();
     }
 
     public void AddComment(Comment comment)
     {
-        _Comments.Add(comment);
+        _comments.Add(comment);
     }
 
     public string GetTitle()
     {
-        return _Title;
+        return _title;
     }       
 
     public string GetAuthor()
     {
-        return _Author;
+        return _author;
     }
 
     public int GetLength()
     {
-        return _Length;
+        return _length;
     }
 
     public List<Comment> GetComments()
     {
-        return _Comments;
+        return _comments;
     }
 
     public int GetCommentCount()
     {
-        return _Comments.Count;
+        return _comments.Count;
     }
 
     public void DisplayVideo()
     {
-        Console.WriteLine("Title: " + _Title);
-        Console.WriteLine("Author: " + _Author);
-        Console.WriteLine("Length: " + _Length + " seconds");
-        Console.WriteLine("Comment Count: " + _Comments.Count);
+        Console.WriteLine("Title: " + _title);
+        Console.WriteLine("Author: " + _author);
+        Console.WriteLine("Length: " + _length + " seconds");
+        Console.WriteLine("Comment Count: " + _comments.Count);
         Console.WriteLine("Comments:");
-        foreach (Comment comment in _Comments)
+        foreach (Comment comment in _comments)
         {
             comment.DisplayComment();
         }

@@ -7,20 +7,20 @@ using System.Collections.Generic;
 
 class VideoList
 {
-    private List<Video> _Videos;
+    private List<Video> _videos;
 
     public VideoList()
     {
-        _Videos = new List<Video>();
+        _videos = new List<Video>();
     }
 
     public void AddVideo(Video video)
     {
-        _Videos.Add(video);
+        _videos.Add(video);
     }
 
     public List<Video> GetVideos()
     {
-        return _Videos;
+        return _videos;
     }
 }

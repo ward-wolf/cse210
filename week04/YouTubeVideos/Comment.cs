@@ -6,28 +6,28 @@ using System;
 
 class Comment
 {
-    private string _Name;
-    private string _Text;
+    private string _name;
+    private string _text;
 
     public Comment(string name, string text)
     {
-        _Name = name;
-        _Text = text;
+        _name = name;
+        _text = text;
     }
 
     public string GetName()
     {
-        return _Name;
+        return _name;
     }
 
     public string GetText()
     {
-        return _Text;
+        return _text;
     }
 
     public void DisplayComment()
     {
-        Console.WriteLine(_Name + ": " + _Text);
+        Console.WriteLine(_name + ": " + _text);
     }
 
 
