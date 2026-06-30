@@ -31,7 +31,8 @@ public class Journal
         }
     }
     public void LoadFromFile(string fileName)
-    {       
+    {
+        _entries.Clear();
         string[] lines = System.IO.File.ReadAllLines(fileName);
         foreach (string line in lines)
         {
