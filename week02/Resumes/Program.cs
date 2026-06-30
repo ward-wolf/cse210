@@ -1,6 +1,6 @@
 // Program to create a resume by calling Resume.cs and Job.cs
 
-// Steve Ward CSE210 March 2, 2026
+// Lee Ward CSE210 June 30, 2026
 
 using System;
 

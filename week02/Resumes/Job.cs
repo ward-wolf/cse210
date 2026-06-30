@@ -1,6 +1,6 @@
 // A class called Jobs which holds information about each job such as company, job title, and the years.
 
-// Steve Ward CSE210 March 2, 2026
+// Lee Ward CSE210 June 30, 2026
 using System;
 public class Job
 {
