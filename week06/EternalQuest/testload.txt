@@ -1,4 +1,4 @@
-0
-SimpleGoal:Run 5K,First race,1000
-EternalGoal:Read scriptures,Study daily,100
-ChecklistGoal:Do pushups,10 pushups,50,3,500
+250
+SimpleGoal:Run,A race,1000,True
+EternalGoal:Read,Daily,100
+ChecklistGoal:Pushups,10 pushups,50,500,3,2

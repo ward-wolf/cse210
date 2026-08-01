@@ -73,18 +73,22 @@ public class GoalManager
     public void ListGoalNames()
     {
         Console.WriteLine("The goals are:");
-        for (int i = 0; i < _goals.Count; i++)
+        int number = 1;
+        foreach (Goal goal in _goals)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i].GetShortName()}");
+            Console.WriteLine($"{number}. {goal.GetShortName()}");
+            number++;
         }
     }
 
     public void ListGoalDetails()
     {
         Console.WriteLine("The goals are:");
-        for (int i = 0; i < _goals.Count; i++)
+        int number = 1;
+        foreach (Goal goal in _goals)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i].GetDetailsString()}");
+            Console.WriteLine($"{number}. {goal.GetDetailsString()}");
+            number++;
         }
     }
 
@@ -159,17 +163,20 @@ public class GoalManager
         Console.WriteLine($"You now have {_score} points.");
         Console.WriteLine();
 
-        // Checks if the goal is a Checklist goal, creates a new Checklist goal, and checks if it was completed on this event record
-
-        if (goal is ChecklistGoal checklistGoal && !wasComplete && goal.IsComplete())
+        // If a Checklist goal was just completed on this event, offer to duplicate and reset it
+        if (goal is ChecklistGoal)
         {
-            Console.WriteLine($"You completed {checklistGoal.GetShortName()} by doing it {checklistGoal.GetTarget()} times!");
-            Console.Write("Would you like to duplicate this goal and reset it to 0? Y or N. ");
-            string answer = Console.ReadLine();
-
-            if (answer == "Y" || answer == "y")
+            ChecklistGoal checklistGoal = (ChecklistGoal)goal;
+            if (!wasComplete && goal.IsComplete())
             {
-                _goals.Add(checklistGoal.Duplicate());
+                Console.WriteLine($"You completed {checklistGoal.GetShortName()} by doing it {checklistGoal.GetTarget()} times!");
+                Console.Write("Would you like to duplicate this goal and reset it to 0? Y or N. ");
+                string answer = Console.ReadLine();
+
+                if (answer == "Y" || answer == "y")
+                {
+                    _goals.Add(checklistGoal.Duplicate());
+                }
             }
         }
     }
