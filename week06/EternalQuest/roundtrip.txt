@@ -1,0 +1,3 @@
+1100
+SimpleGoal:Run 5K,First race,1000,True
+ChecklistGoal:Pushups,10 pushups,50,3,500,2
